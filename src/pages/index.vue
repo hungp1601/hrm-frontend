@@ -1,12 +1,22 @@
 <template>
-    <LoginComponent />
+   <div>
+    this is index page
+   </div>
 </template>
 
 <script>
-import LoginComponent from '~/components/LoginComponent.vue'
-
+import axios from 'axios'
 export default {
   name: 'IndexPage',
-  components: { LoginComponent }
+
+  async mounted() {
+    // const test = await this.$getService(
+    //       '/test'
+    //     ).test(this.$axios)
+    const test = await this.$axios.get('/test');
+    console.log(test)
+
+ 
+  },
 }
 </script>

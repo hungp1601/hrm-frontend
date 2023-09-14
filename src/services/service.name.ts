@@ -1,3 +1,3 @@
 export const ServiceName = {
-  Test: "test",
+  Test: "/test",
 };

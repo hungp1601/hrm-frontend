@@ -15,8 +15,8 @@ export const NUXT_PORT = process.env.PORT || '4000'
 
 /* URL */
 export const BASE_URL = process.env.BASE_URL || (NUXT_HOST + ':' + NUXT_PORT)
-export const BASE_API_URL = process.env.BASE_API_URL || 'http://localhost:8000' // 'https://ilya-blog-backend.herokuapp.com' // process.env.BASE_API_URL
-export const FULL_API_URL = BASE_API_URL + '/api'
+export const BASE_API_URL = process.env.BASE_API_URL || 'http://localhost:3000' // 'https://ilya-blog-backend.herokuapp.com' // process.env.BASE_API_URL
+export const FULL_API_URL = process.env.FULL_API_URL
 
 console.log('BASE_API_URL', BASE_API_URL)
 

@@ -81,6 +81,8 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
+  middleware: ['@/auth'],
+
 
 //   auth: {
 //     strategies: {
@@ -108,7 +110,9 @@ export default {
 //   },
 
   axios: {
-    baseURL: FULL_API_URL
+    baseURL: FULL_API_URL,
+    proxyHeaders: false,
+    credentials: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
