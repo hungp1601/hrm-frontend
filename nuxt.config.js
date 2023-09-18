@@ -64,7 +64,10 @@ export default {
   ],
 
   plugins: [
-    '@/plugins/global/element-ui',
+    '@/ui/plugins/element-ui',
+    '@/ui/plugins/bootstrap',
+    '@/plugins/global/perfect-scrollbar',
+    '@/plugins/global/draggable',
     '@/plugins/global/mixins',
     '@/plugins/serivce.locator'
   ],
@@ -79,6 +82,7 @@ export default {
   ],
 
   modules: [
+    'cookie-universal-nuxt',
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     ['@nuxtjs/google-fonts', {
@@ -92,8 +96,27 @@ export default {
 
   middleware: ['@/middleware/auth'],
 
+  globalComponents: {
+    dirs: [
+      {
+        dir: 'ui/component',
+      },
+    ],
+  },
 
 //   auth: {
+//     localStorage: false,
+//     cookie: {
+//       options: {
+//         expires: 30,
+//       },
+//     },
+//     redirect: {
+//       home: '/',
+//       login: '/',
+//       logout: '/',
+//     },
+
 //     strategies: {
 //       local: {
 // //      scheme: "refresh",
@@ -103,16 +126,12 @@ export default {
 //           required: true,
 //           type: "Bearer"
 //         },
-//         user: {
-//           property: "user",
-//           autoFetch: true
-//         },
 
 //         endpoints: {
-//           login: { url: "/api/auth/login", method: "post" },
-// //        refresh: { url: "/api/auth/refresh-token", method: "post" },
-//           logout: false, //  we don't have an endpoint for our logout in our API and we just remove the token from localstorage
-//           user: { url: "/api/auth/user", method: "get" }
+// //           login: { url: "/auth/login", method: "post" },
+// // //        refresh: { url: "  /auth/refresh-token", method: "post" },
+// //           logout: { url: '/auth/logout', method: 'post' },
+// //           user: { url: "/auth/user", method: "get" }
 //         }
 //       }
 //     }
@@ -121,7 +140,7 @@ export default {
   axios: {
     baseURL: FULL_API_URL,
     proxyHeaders: false,
-    credentials: false,
+    credentials: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

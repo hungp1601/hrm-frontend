@@ -17,13 +17,19 @@
     "@nuxtjs/auth-next": "^5.0.0-1667386184.dfbbb54",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/proxy": "^2.1.0",
+    "bootstrap": "^5.3.2",
+    "bootstrap-vue": "^2.23.1",
     "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.25.3",
     "element-ui": "^2.15.13",
+    "lodash": "^4.17.21",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vue2-perfect-scrollbar": "^1.5.56",
+    "vuedraggable": "^2.24.3",
+    "vuejs-logger": "^1.5.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
