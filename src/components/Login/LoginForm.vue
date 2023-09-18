@@ -7,31 +7,30 @@
       :rules="rules"
       :model="form"
     >
-      <el-form-item 
-        prop="email" 
-        label="Email"
-        placeholder="Nhập email"
-        label-position="top">
-        <el-input v-model="form.email" />
-      </el-form-item>
       <el-form-item
-        prop="password"
-        label="Password"
+        prop="email"
+        label="Email"
         placeholder="Nhập email"
         label-position="top"
       >
-        <el-input v-model="form.password" type="password" />
+        <el-input v-model="form.email" />
+      </el-form-item>
+      
+      <el-form-item
+        prop="password"
+        label="Password"
+        placeholder="Nhập mật khẩu"
+        label-position="top"
+      >
+        <el-input v-model="form.password" type="password" show-password />
       </el-form-item>
 
-      <el-button type="primary" @click="login">
-        Login
-      </el-button>
+      <el-button type="primary" @click="login"> Login </el-button>
     </el-form>
   </div>
 </template>
 
 <script>
-
 export default {
   // props: {
   //   email: {
@@ -42,40 +41,40 @@ export default {
   //   }
   // },
 
-  data () {
+  data() {
     return {
-      form:{},
+      form: {},
       rules: {
         email: [
-          { required: true, message: 'Please input email address' },
-          { type: 'email', message: 'Please input correct email address' }
+          { required: true, message: "Please input email address" },
+          { type: "email", message: "Please input correct email address" },
         ],
-        password: [{
-          required: true,
-          message: 'Password can not be null'
-        },
-        {
+        password: [
+          {
+            required: true,
+            message: "Password can not be null",
+          },
+          {
             validator: (rule, value, callback) => {
               if (value && value.length < 8) {
-                callback(new Error('Password length must be greater or equal to 8'))
+                callback(
+                  new Error("Password length must be greater or equal to 8")
+                );
               }
-              callback()
+              callback();
             },
           },
-      ]
-      }
-    }
+        ],
+      },
+    };
   },
   methods: {
-    async login(){
-      const valid = await this.validateForm(this.$refs.login)
-      if (valid)
-      console.log('hehe')
-    }
-  }
-}
+    async login() {
+      const valid = await this.validateForm(this.$refs.login);
+      if (valid) console.log("hehe");
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
