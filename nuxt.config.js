@@ -64,7 +64,8 @@ export default {
   ],
 
   plugins: [
-    '@/plugins/element-ui',
+    '@/plugins/global/element-ui',
+    '@/plugins/global/mixins',
     '@/plugins/serivce.locator'
   ],
 
@@ -73,15 +74,23 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
     
   ],
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    ['@nuxtjs/google-fonts', {
+      families: {
+        Roboto: true,
+        Inter: true,
+        Khula: true,
+      }
+  }],
   ],
 
-  middleware: ['@/auth'],
+  middleware: ['@/middleware/auth'],
 
 
 //   auth: {

@@ -1,11 +1,13 @@
 <template>
    <div>
-    this is index page
+    <Login @login="login"/>
    </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Login from '@/components/Login/LoginForm.vue'
+
+
 export default {
   name: 'IndexPage',
 
@@ -13,10 +15,17 @@ export default {
     // const test = await this.$getService(
     //       '/test'
     //     ).test(this.$axios)
-    const test = await this.$axios.get('/test');
-    console.log(test)
-
+    // const test = await this.$axios.get('/test');
+    // console.log(test)
  
+  },
+  
+  components: { Login },
+
+  methods: {
+    login(){
+
+    }    
   },
 }
 </script>
