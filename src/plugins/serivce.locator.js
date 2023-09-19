@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-call */
 import { serviceLocator } from "@/services";
 import { log } from "@/utils";
 

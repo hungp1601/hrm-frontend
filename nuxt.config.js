@@ -99,7 +99,7 @@ export default {
   globalComponents: {
     dirs: [
       {
-        dir: 'ui/component',
+        dir: 'ui/components',
       },
     ],
   },
