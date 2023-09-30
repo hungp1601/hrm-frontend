@@ -1,31 +1,28 @@
 <template>
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="flex flex-col justify-center items-center login-form">
+    <div class="login-form__logo">HRM</div>
     <el-form
       ref="login"
-      label-width="120px"
-      class="demo-dynamic"
+      class="login-form__wrapper w-full"
       :rules="rules"
       :model="form"
     >
-      <el-form-item
-        prop="email"
-        label="Email"
-        placeholder="Nhập email"
-        label-position="top"
-      >
-        <el-input v-model="form.email" />
-      </el-form-item>
-      
-      <el-form-item
-        prop="password"
-        label="Password"
-        placeholder="Nhập mật khẩu"
-        label-position="top"
-      >
-        <el-input v-model="form.password" type="password" show-password />
+      <el-form-item prop="username" label="Tài khoản" label-position="top">
+        <el-input placeholder="Nhập email" v-model="form.email" />
       </el-form-item>
 
-      <el-button type="primary" @click="login"> Login </el-button>
+      <el-form-item prop="password" label="Password" label-position="top">
+        <el-input
+          v-model="form.password"
+          placeholder="Nhập mật khẩu"
+          type="password"
+          show-password
+        />
+      </el-form-item>
+
+      <el-button class="login-form__submit" type="primary" @click="handleLogin">
+        Đăng nhập
+      </el-button>
     </el-form>
   </div>
 </template>
@@ -45,7 +42,7 @@ export default {
     return {
       form: {},
       rules: {
-        email: [
+        username: [
           { required: true, message: "Please input email address" },
           { type: "email", message: "Please input correct email address" },
         ],
@@ -69,7 +66,7 @@ export default {
     };
   },
   methods: {
-    async login() {
+    async handleLogin() {
       const valid = await this.validateForm(this.$refs.login);
       if (valid) console.log("hehe");
     },
@@ -77,4 +74,60 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.login-form {
+  max-width: 480px;
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  padding: 0 56px;
+
+  &__logo {
+    color: #2362ea;
+    font-family: Khula, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .el-form-item {
+    margin-bottom: 0;
+
+    &__label {
+      color: #6f6f6f;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+
+    &__submit{
+      color: #FFF;
+      font-family: Roboto;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .el-input__inner{
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid #D5D5D5;
+    }
+
+    
+  }
+}
+</style>

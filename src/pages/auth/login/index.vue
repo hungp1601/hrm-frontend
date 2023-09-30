@@ -1,5 +1,7 @@
 <template>
-  <LoginComponent />
+ <div class="w-screen h-screen flex items-center justify-center">
+   <LoginComponent />
+ </div>
 </template>
 
 <script>
