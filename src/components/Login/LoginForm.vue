@@ -23,6 +23,8 @@
       <el-button class="login-form__submit" type="primary" @click="handleLogin">
         Đăng nhập
       </el-button>
+
+      <icon name="bi-arrow-bar-up"/>
     </el-form>
   </div>
 </template>
@@ -112,8 +114,8 @@ export default {
       margin-bottom: 0px;
     }
 
-    &__submit{
-      color: #FFF;
+    &__submit {
+      color: #fff;
       font-family: Roboto;
       font-size: 24px;
       font-style: normal;
@@ -121,13 +123,11 @@ export default {
       line-height: normal;
     }
 
-    .el-input__inner{
+    .el-input__inner {
       height: 50px;
       border-radius: 8px;
-      border: 1px solid #D5D5D5;
+      border: 1px solid #d5d5d5;
     }
-
-    
   }
 }
 </style>

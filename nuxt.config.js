@@ -70,6 +70,7 @@ export default {
   },
 
   css: [
+    '@/assets/scss/global.scss'
   ],
 
   plugins: [
@@ -87,7 +88,6 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    
   ],
 
   modules: [
@@ -105,13 +105,9 @@ export default {
 
   middleware: ['@/middleware/auth'],
 
-  globalComponents: {
-    dirs: [
-      {
-        dir: 'ui/components',
-      },
-    ],
-  },
+  components: [
+    { path: '@/ui/components' },
+  ],
 
 //   auth: {
 //     localStorage: false,
