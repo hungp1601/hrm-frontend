@@ -2,14 +2,8 @@
 import { join } from 'path'
 import * as env from './env'
 
-// declare global {
-//   namespace NodeJS {
-//     interface Global {
-//       appEnv: any
-//       _$app: any
-//     }
-//   }
-// }
+import { Routes } from './src/config'
+
 
 global.appEnv = env
 const {
@@ -147,6 +141,17 @@ export default {
     proxyHeaders: false,
     credentials: true,
   },
+
+  router: {
+    extendRoutes (routes) {
+      routes.splice(0)
+      routes.push(...Routes)
+    },
+    // base: APP_PATH.PATH_PROJECT_RESOURCES
+    //   ? `/${APP_PATH.PATH_PROJECT_RESOURCES}/`
+    //   : '/',
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

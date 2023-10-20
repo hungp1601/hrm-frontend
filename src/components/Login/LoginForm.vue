@@ -23,8 +23,6 @@
       <el-button class="login-form__submit" type="primary" @click="handleLogin">
         Đăng nhập
       </el-button>
-
-      <icon name="bi-arrow-bar-up"/>
     </el-form>
   </div>
 </template>

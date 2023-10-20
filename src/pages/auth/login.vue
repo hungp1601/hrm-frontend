@@ -8,7 +8,6 @@
 import LoginComponent from '~/components/Login/LoginForm.vue'
 
 export default {
-name: 'IndexPage',
-components: { LoginComponent }
+  components: { LoginComponent }
 }
 </script>
