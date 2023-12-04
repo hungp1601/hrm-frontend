@@ -1,9 +1,8 @@
 
 import { resolve } from 'path'
-import { RouteNames } from './route.name'
+import { ROUTE_NAMES } from './route.name'
 
 const loadPage = (path) => {
-  console.log(123, resolve('../pages', path))
   return './src/pages' + path
 }
 
@@ -11,7 +10,13 @@ const loadPage = (path) => {
 export const Routes = [
   {
     path: '/',
-    name: RouteNames.Index,
+    name: ROUTE_NAMES.Index,
+    component: loadPage('/index.vue'),
+  },
+
+  {
+    path: '/login',
+    name: ROUTE_NAMES.Login,
     component: loadPage('/auth/login.vue'),
   },
 

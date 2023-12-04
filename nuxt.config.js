@@ -58,13 +58,19 @@ export default {
 
   srcDir: 'src',
 
+  tailwindcss: {
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+
   server: {
     host: NUXT_HOST,
     port:NUXT_PORT,
   },
 
   css: [
-    '@/assets/scss/global.scss'
+    '@/assets/scss/global.scss',
+    '@/assets/scss/app.scss'
   ],
 
   plugins: [
@@ -82,19 +88,17 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    '@nuxt/postcss8',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/fontawesome'
   ],
 
   modules: [
     'cookie-universal-nuxt',
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    ['@nuxtjs/google-fonts', {
-      families: {
-        Roboto: true,
-        Inter: true,
-        Khula: true,
-      }
-  }],
+    '@nuxtjs/style-resources',
+
   ],
 
   middleware: ['@/middleware/auth'],
